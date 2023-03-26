@@ -113,7 +113,7 @@ compute_junction:
 delay1:
   CHO RDA, sin1, SIN | REG | COMPC, del1# - 100  ; Chorused read at end of delay
   CHO RDA, sin1, 0, del1# - 99
-  MULX density_pot          ; Energy loss for density level
+  MULX density              ; Energy loss for density level
   WRAX delay1_out, -1.0     ; Save it for junction sum, and invert
 
   RDAX junction, 1.0    ; Add the "reflected" energy from the junction
@@ -124,7 +124,7 @@ delay1:
 delay2:
   CHO RDA, sin0, SIN | REG | COMPC, del2# - 100
   CHO RDA, sin0, 0, del2# - 99
-  MULX density_pot
+  MULX density
   WRAX delay2_out, -1.0
 
   RDAX junction, 1.0
